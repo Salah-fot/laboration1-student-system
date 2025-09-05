@@ -1,0 +1,1 @@
+print("welcome to the greatest student system in the world")
