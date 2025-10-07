@@ -30,7 +30,7 @@ while True:
         try:
             book_id = int(input("enter the id of the book you want"))  
         except ValueError:
-            print("invalod number of the id")  
+            print("invalid number of the id")  
         found = False 
         for book in books:
             if book["id"] == book_id:
@@ -44,7 +44,12 @@ while True:
                         print("book not found")
     elif choice == "2":
         print("add a book")
-        new_id = int(input("enter the book id "))
+        try:
+            new_id = int(input("enter the book id "))
+        except ValueError:
+            print("Invalid ID! please enter a number.")
+            break
+        
         new_title =(input("title: "))
         new_name =(input("book_name: "))
         books.append({"id": new_id, "title": new_title,"book_name": new_name, "available": True})
